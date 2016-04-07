@@ -13,7 +13,13 @@ describe 'vault::config', :type => :class do
     end
 
     context "user and group exist for vault if manage users is set to true" do
-      let (:params) {{:vault_user => 'vault', :manage_user => true}}
+      let (:params) {
+        {
+          :vault_user  => 'vault',
+          :manage_user => true
+        }
+      }
+
       it { should contain_group('vault').with_ensure('present') }
 
       it { should contain_user('vault').with(

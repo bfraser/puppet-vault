@@ -4,17 +4,63 @@ require 'spec_helper'
     context 'with defaults for all parameters' do
       it { should compile.with_all_deps }
 
-      let(:facts) do
-    {
-      osfamily: 'Debian',
-      operatingsystem: 'Debian',
-      lsbdistcodename: 'wheezy',
-      manage_user: true,
-    }
-  end
+      let(:facts) {
+        {
+          osfamily: 'Debian',
+          operatingsystem: 'Debian',
+          lsbdistcodename: 'wheezy',
+          manage_user: true,
+        }
+      }
 
-  it { should contain_class('vault') }
+      it { should contain_class('vault') }
 
-  end
+    end
+
+    context 'installs and configure vault' do
+      let(:facts) {
+        {
+          osfamily: 'Debian',
+          operatingsystem: 'Debian',
+          lsbdistcodename: 'wheezy',
+          manage_user: true,
+        }
+      }
+
+      let (:params) {
+        {
+          :package_ensure => 'present',
+          :vault_user     => 'vault',
+          :version        => '0.5.2'
+        }
+      }
+
+      it { is_expected.to contain_class('vault::install') }
+      it { is_expected.to contain_class('vault::config') }
+      it { is_expected.to contain_class('vault::service') }
+
+    end
+
+    context 'uninstall vault from the system' do
+      let(:facts) {
+        {
+          osfamily: 'Debian',
+          operatingsystem: 'Debian',
+          lsbdistcodename: 'wheezy',
+          manage_user: true,
+        }
+      }
+
+      let (:params) {
+        {
+          :package_ensure => 'absent',
+          :vault_user     => 'vault',
+          :version        => '0.5.2'
+        }
+      }
+
+      it { is_expected.to contain_class('vault::install') }
+
+    end
 
 end

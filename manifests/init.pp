@@ -64,8 +64,6 @@ class vault (
     ~>
     class{'::vault::service':  }
   } else {
-
     class {'::vault::install': }
-
   }
 }

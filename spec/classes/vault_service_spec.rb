@@ -10,8 +10,15 @@ describe 'vault::service', :type => :class do
         :lsbdistid              => 'Debian',
       }
     end
+
     context "vault running and enabled" do
-      let (:params) {{:restart_cmd => '/etc/init.d/vault restart', :service_ensure => 'running', :service_enable => true}}
+      let (:params) {
+        {
+          :restart_cmd    => '/etc/init.d/vault restart', 
+          :service_ensure => 'running', 
+          :service_enable => true
+        }
+      }
       it { should contain_service("vault").with(
         'ensure'     => 'running',
         'enable'     => 'true',
@@ -21,8 +28,15 @@ describe 'vault::service', :type => :class do
         )
       }
     end
+
     context "vault running and disabled" do
-      let (:params) {{:restart_cmd => '/etc/init.d/vault restart', :service_ensure => 'running', :service_enable => false}}
+      let (:params) {
+        {
+          :restart_cmd    => '/etc/init.d/vault restart', 
+          :service_ensure => 'running', 
+          :service_enable => false
+        }
+      }
       it { should contain_service("vault").with(
         'ensure'     => 'running',
         'enable'     => 'false',
@@ -32,8 +46,15 @@ describe 'vault::service', :type => :class do
         )
       }
     end
+
     context "vault stopped but enabled" do
-      let (:params) {{:restart_cmd => '/etc/init.d/vault restart', :service_ensure => 'stopped', :service_enable => true}}
+      let (:params) {
+        {
+          :restart_cmd    => '/etc/init.d/vault restart', 
+          :service_ensure => 'stopped', 
+          :service_enable => true
+        }
+      }
       it { should contain_service("vault").with(
         'ensure'     => 'stopped',
         'enable'     => 'true',
@@ -43,8 +64,15 @@ describe 'vault::service', :type => :class do
         )
       }
     end
+
     context "vault stopped and disabled" do
-      let (:params) {{:restart_cmd => '/etc/init.d/vault restart', :service_ensure => 'stopped', :service_enable => false}}
+      let (:params) {
+        {
+          :restart_cmd    => '/etc/init.d/vault restart', 
+          :service_ensure => 'stopped', 
+          :service_enable => false
+        }
+      }
       it { should contain_service("vault").with(
         'ensure'     => 'stopped',
         'enable'     => 'false',
