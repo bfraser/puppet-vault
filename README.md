@@ -1,4 +1,9 @@
-# puppet-vault [![Build Status](https://travis-ci.com/rhoml/puppet-vault.svg?token=vfFGLwkzPiw5jXGyyDBy&branch=master)](https://travis-ci.com/rhoml/puppet-vault)
+# puppet-vault
+
+[![Build Status](https://travis-ci.org/rhoml/puppet-vault.png?branch=master)](https://travis-ci.org/rhoml/puppet-vault)
+[![Puppet
+Forge](http://img.shields.io/puppetforge/v/rhoml/vault.svg)](https://forge.puppetlabs.com/rhoml/vault)
+[![Dependency Status](https://gemnasium.com/badges/6d7952971923a0cf6fb2e9eeed6ce54b.svg)](https://gemnasium.com/github.com/rhoml/puppet-vault)
 
 # Overview
 
@@ -22,7 +27,7 @@ This module enables you to use hiera to configure your Vault server. It also all
 vault::config_hash:
     backend:
         consul:
-            address: 127.0.0.1:8500
+            address: '127.0.0.1:8500'
             advertise_addr: "http://%{::ipaddress_eth0}"
             path: 'vault/'
     listener:

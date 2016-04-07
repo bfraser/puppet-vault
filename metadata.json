@@ -1,12 +1,12 @@
 {
   "name": "rhoml/vault",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Rhommel Lamas",
   "email": "roml@rhommell.com",
   "summary": "Installs and configure Hashicorp Vault project.",
   "license": "MIT",
   "source": "https://github.com/rhoml/puppet-vault",
-  "project_page": "https://github.com/rhoml/puppet-vault/README.md",
+  "project_page": "https://github.com/rhoml/puppet-vault",
   "issues_url": "https://github.com/rhoml/puppet-vault/issues",
   "tags": ["hashicorp", "vault"],
   "dependencies": [
