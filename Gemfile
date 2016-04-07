@@ -14,6 +14,8 @@ gem 'metadata-json-lint'
 gem 'puppetlabs_spec_helper', '>= 0.1.0'
 gem 'facter', '>= 1.7.0'
 gem 'rspec-puppet'
+gem 'rspec', '~> 3.4.0'
+gem 'rake', '~> 11.1.2'
 
 gem 'puppet-lint', :git => 'https://github.com/rodjek/puppet-lint.git'
 gem 'puppet-lint-absolute_classname-check'
@@ -28,14 +30,3 @@ gem 'puppet-lint-trailing_comma-check'
 gem 'puppet-lint-undef_in_function-check'
 gem 'puppet-lint-unquoted_string-check'
 gem 'puppet-lint-variable_contains_upcase'
-
-# rspec must be v2 for ruby 1.8.7
-if RUBY_VERSION >= '1.8.7' and RUBY_VERSION < '1.9'
-  gem 'rspec', '~> 2.0'
-  gem 'rake', '~> 10.5.0'
-end
-
-if RUBY_VERSION >= '1.9'
-  gem 'rspec', '~> 3.4.0'
-  gem 'rake', '~> 11.1.2'
-end
