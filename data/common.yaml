@@ -1,3 +1,4 @@
+---
 vault::config_hash:
     backend:
         consul:
