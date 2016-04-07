@@ -1,0 +1,8 @@
+---
+version: 4
+
+datadir: hieradata
+
+:hierarchy:
+- osfamily/%{::osfamily}
+- common

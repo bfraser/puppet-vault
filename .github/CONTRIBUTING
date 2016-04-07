@@ -1,0 +1,7 @@
+## Development
+
+1. Clone the repo
+2. Change directory to the actual module dir
+3. We use pre-commit.com hooks to ensure guidelines `pre-commit install`
+4. Create a feature branch
+5. Submit a PR

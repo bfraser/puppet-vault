@@ -1,0 +1,22 @@
+{
+  "name": "rhoml/vault",
+  "version": "0.0.1",
+  "author": "Rhommel Lamas",
+  "email": "roml@rhommell.com",
+  "summary": "Installs and configure Hashicorp Vault project.",
+  "license": "MIT",
+  "source": "https://github.com/rhoml/puppet-vault",
+  "project_page": "https://github.com/rhoml/puppet-vault/README.md",
+  "issues_url": "https://github.com/rhoml/puppet-vault/issues",
+  "tags": ["hashicorp", "vault"],
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 2.2.1"}
+  ],
+  "operatingsystem_support": [
+    {
+    "operatingsystem": "Debian",
+    "operatingsystemrelease": [ "6", "7" ]
+    }
+   ]
+}
+

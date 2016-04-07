@@ -1,0 +1,18 @@
+vault::config_hash:
+    backend:
+        consul:
+            advertise_addr: "http://%{::ipaddress}"
+            path: 'vault/'
+    listener:
+        tcp:
+            address: "%{::fqdn}:8200"
+            tls_disable: 1
+    telemetry:
+        statsite_address: '%{::ipaddress}:8125'
+        disable_hostname: true
+    disable_mlock: true
+vault::manage_user: true
+vault::package_ensure: present
+vault::version: 0.5.2
+vault::vault_user: vault
+vault::restart_cmd: '/etc/init.d/vault restart'
