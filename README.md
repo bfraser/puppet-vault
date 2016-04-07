@@ -1,6 +1,6 @@
 # puppet-vault
 
-[![Build Status](https://travis-ci.org/rhoml/puppet-vault.png?branch=master)](https://travis-ci.org/rhoml/puppet-vault)
+[![Build Status](https://travis-ci.org/rhoml/puppet-vault.svg?branch=master)](https://travis-ci.org/rhoml/puppet-vault)
 [![Puppet
 Forge](http://img.shields.io/puppetforge/v/rhoml/vault.svg)](https://forge.puppetlabs.com/rhoml/vault)
 [![Dependency Status](https://gemnasium.com/badges/6d7952971923a0cf6fb2e9eeed6ce54b.svg)](https://gemnasium.com/github.com/rhoml/puppet-vault)
