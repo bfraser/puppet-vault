@@ -1,22 +1,8 @@
 # Class to configure vault
 class vault::config (
   $config_hash = $::vault::config_hash,
-  $manage_user = $::vault::manage_user,
   $vault_user  = $::vault::vault_user,
   ){
-
-  if $manage_user {
-
-    group { $vault_user:
-      ensure => 'present',
-    }
-
-    user { $vault_user:
-      ensure  => 'present',
-      gid     => $vault_user,
-      require => Group['vault'],
-    }
-  }
 
   file { '/etc/init.d/vault':
     ensure  => 'file',
@@ -25,7 +11,7 @@ class vault::config (
     group   => 'root',
     content => template('vault/init-script.erb'),
     notify  => Class['::vault::service'],
-    require => Package['vault'],
+    #require => Package['vault'],
   }
 
   file { '/etc/vault':
@@ -35,7 +21,7 @@ class vault::config (
     group   => 'root',
     purge   => true,
     recurse => true,
-    require => Package['vault'],
+    #require => Package['vault'],
   }
 
   file { '/etc/vault/vault.json':

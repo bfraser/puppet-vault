@@ -42,7 +42,10 @@
 # Copyright 2015 Rhommel Lamas, unless otherwise noted.
 #
 class vault (
+  $archive_source = undef,
+  $bin_dir        = '/usr/local/bin',
   $config_hash    = {},
+  $install_method = 'package',
   $manage_user    = undef,
   $package_ensure = 'present',
   $restart_cmd    = '/etc/init.d/vault restart',

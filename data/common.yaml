@@ -1,4 +1,5 @@
 ---
+vault::archive_source: null
 vault::config_hash:
     backend:
         consul:
@@ -12,6 +13,8 @@ vault::config_hash:
         statsite_address: '%{::ipaddress}:8125'
         disable_hostname: true
     disable_mlock: true
+vault::install_dir: /opt/vault
+vault::install_method: package
 vault::manage_user: true
 vault::package_ensure: present
 vault::version: 0.5.2

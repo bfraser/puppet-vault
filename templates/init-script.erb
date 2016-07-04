@@ -12,7 +12,7 @@
 PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
 DESC="Vault secrets management framework"
 NAME=vault
-DAEMON=/usr/bin/$NAME
+DAEMON=<%= @bin_dir %>/$NAME
 PIDFILE=/var/run/$NAME.pid
 DAEMON_ARGS=( server -config=/etc/vault/vault.json )
 USER=<%= @vault_user %>
